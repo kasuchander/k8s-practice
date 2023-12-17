@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: rc-pod1
+spec:
+  replicas: 3 #create 3 pods based on the template
+  template:
+    metadata:
+       name: new-pod
+       labels:
+         env: test
+         dc: mum
+    spec:
+      containers:
+      - image: nginx
+        name: firstcont
+
